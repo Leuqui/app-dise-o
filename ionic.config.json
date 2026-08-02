@@ -1,0 +1,7 @@
+{
+  "name": "diseño de interiores 3d",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
