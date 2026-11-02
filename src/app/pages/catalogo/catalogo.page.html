@@ -33,11 +33,25 @@
                 <img [src]="p.img" [alt]="p.nombre" />
             </div>
             <div class="info">
+
                 <div>
                     <p class="nombre">{{ p.nombre }}</p>
-                    <p class="precio">{{ p.precio | currency:'USD':'symbol':'1.2-2' }}</p>
+                    <p class="precio">
+                        {{ p.precio | currency:'USD':'symbol':'1.2-2' }}
+                    </p>
                 </div>
-                <ion-icon [name]="p.fav ? 'heart' : 'heart-outline'" (click)="p.fav = !p.fav"></ion-icon>
+
+                <div class="acciones">
+
+                    <!-- Favoritos -->
+                    <ion-icon [name]="p.fav ? 'heart' : 'heart-outline'" (click)="p.fav = !p.fav">
+                    </ion-icon>
+
+                    <!-- Agregar al carrito -->
+                    <ion-icon [name]="carrito.estaEnCarrito(p.id) ? 'cart' : 'cart-outline'" [class.agregado]="carrito.estaEnCarrito(p.id)" (click)="agregarAlCarrito(p)">
+                    </ion-icon>
+                </div>
+
             </div>
         </div>
     </div>

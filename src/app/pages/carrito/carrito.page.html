@@ -1,65 +1,60 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/inicio" text=""></ion-back-button>
-    </ion-buttons>
-    <ion-title class="ion-text-center">Carrito</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/inicio" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title class="ion-text-center">Carrito</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  @for (i of items(); track i.id) {
+    @for (i of items(); track i.id) {
     <article class="item">
-      <div class="thumb">
-        <img [src]="i.img" [alt]="i.name" />
-      </div>
-
-      <div class="info">
-        <strong>{{ i.name }}</strong>
-        <span class="detail">{{ i.detail }}</span>
-        <span class="price">{{ i.price | currency: 'USD' : 'symbol' : '1.0-0' }}</span>
-      </div>
-
-      <div class="actions">
-        <div class="qty">
-          <button (click)="changeQty(i.id, -1)" aria-label="Quitar uno">−</button>
-          <span>{{ i.qty }}</span>
-          <button (click)="changeQty(i.id, 1)" aria-label="Agregar uno">+</button>
+        <div class="thumb">
+            <img [src]="i.img" [alt]="i.name" />
         </div>
-        <button class="trash" (click)="remove(i.id)" aria-label="Eliminar">
+
+        <div class="info">
+            <strong>{{ i.name }}</strong>
+            <span class="detail">{{ i.detail }}</span>
+            <span class="price">{{ i.price | currency: 'USD' : 'symbol' : '1.0-0' }}</span>
+        </div>
+
+        <div class="actions">
+            <div class="qty">
+                <button (click)="changeQty(i.id, -1)" aria-label="Quitar uno">−</button>
+                <span>{{ i.qty }}</span>
+                <button (click)="changeQty(i.id, 1)" aria-label="Agregar uno">+</button>
+            </div>
+            <button class="trash" (click)="remove(i.id)" aria-label="Eliminar">
           <ion-icon name="trash-outline"></ion-icon>
         </button>
-      </div>
+        </div>
     </article>
-  } @empty {
+    } @empty {
     <p class="empty">Tu carrito está vacío. Agregá muebles desde el catálogo.</p>
-  }
+    }
 
-  <section class="totals">
-    <div class="line">
-      <span>Subtotal</span>
-      <span>{{ subtotal() | currency: 'USD' : 'symbol' : '1.0-0' }}</span>
-    </div>
-    <div class="line">
-      <span>Envío</span>
-      <span>{{ shipping | currency: 'USD' : 'symbol' : '1.0-0' }}</span>
-    </div>
-    <div class="line total">
-      <span>Total</span>
-      <span>{{ total() | currency: 'USD' : 'symbol' : '1.0-0' }}</span>
-    </div>
-  </section>
+    <section class="totals">
+        <div class="line">
+            <span>Subtotal</span>
+            <span>{{ subtotal() | currency: 'USD' : 'symbol' : '1.0-0' }}</span>
+        </div>
+        <div class="line">
+            <span>Envío</span>
+            <span>{{ shipping | currency: 'USD' : 'symbol' : '1.0-0' }}</span>
+        </div>
+        <div class="line total">
+            <span>Total</span>
+            <span>{{ total() | currency: 'USD' : 'symbol' : '1.0-0' }}</span>
+        </div>
+    </section>
 </ion-content>
 
 <ion-footer class="ion-no-border">
-  <ion-toolbar>
-    <ion-button
-      expand="block"
-      class="cta"
-      routerLink="/checkout"
-      [disabled]="items().length === 0"
-    >
-      Continuar compra
-    </ion-button>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-button expand="block" class="cta" routerLink="/checkout" [disabled]="items().length === 0">
+            Continuar compra
+        </ion-button>
+    </ion-toolbar>
 </ion-footer>

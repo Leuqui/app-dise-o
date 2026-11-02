@@ -30,9 +30,9 @@ export class InicioPage {
   ];
 
   inspiration = [
-    { title: 'Sala Moderna',      img: 'assets/sala moderna.png' },
-    { title: 'Dormitorio Nórdico', img: 'assets/dormitorio nordico.png' },
-    { title: 'Dormitorio Nórdico', img: 'assets/dormitorio nordico.png' },
+    { title: 'Sala Moderna',      img: 'assets/sala-moderna.png' },
+    { title: 'Dormitorio Nórdico', img: 'assets/dormitorio-nordico.png' },
+    { title: 'Dormitorio Nórdico', img: 'assets/dormitorio-nordico.png' },
   ];
 
   products: Product[] = [
