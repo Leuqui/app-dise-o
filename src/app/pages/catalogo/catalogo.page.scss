@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+:host {
+    --verde: #2e9e6b;
+    /* ← color del chip "Todos" (verde) */
+    --negro: #0b0b0b;
+    --borde: #dcdcdc;
+    --turquesa: #7cc4c8;
+    font-family: 'Poppins', sans-serif;
+}
+
+ion-toolbar {
+    --background: #fff;
+    --color: var(--negro);
+    ion-icon {
+        font-size: 26px;
+        color: var(--negro);
+    }
+}
+
+.titulo {
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+ion-content {
+    --background: #fff;
+}
+
+.buscador {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 16px 20px 18px;
+    padding: 0 18px;
+    height: 52px;
+    border: 1.5px solid var(--borde);
+    border-radius: 16px;
+    ion-icon {
+        font-size: 22px;
+    }
+    input {
+        flex: 1;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        font: 500 16px 'Poppins', sans-serif;
+        color: var(--negro);
+        &::placeholder {
+            color: #8a8fb0;
+        }
+    }
+}
+
+.categorias {
+    display: flex;
+    gap: 10px;
+    padding: 0 20px 20px;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.chip {
+    flex: none;
+    padding: 9px 20px;
+    border-radius: 999px;
+    border: 1.5px solid var(--borde);
+    background: #fff;
+    font: 500 14px 'Poppins', sans-serif;
+    color: var(--negro);
+    &.activo {
+        background: var(--verde);
+        border-color: var(--verde);
+        color: #fff;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 16px;
+    padding: 0 20px 110px;
+}
+
+.img-box {
+    aspect-ratio: 1 / 1;
+    border: 1.5px solid #e6e6e6;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 8px 0;
+    .nombre {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .precio {
+        margin: 4px 0 0;
+        font-size: 13px;
+        font-weight: 700;
+    }
+    ion-icon {
+        font-size: 24px;
+        cursor: pointer;
+    }
+}
+
+ion-footer {
+    background: #fff;
+}
+
+.tabbar {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 78px;
+    padding: 0 8px env(safe-area-inset-bottom);
+    background: #fff;
+    border-radius: 28px 28px 0 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, .06);
+}
+
+.tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    background: none;
+    border: 0;
+    color: #9a9a9a;
+    font: 400 10px 'Poppins', sans-serif;
+    ion-icon {
+        font-size: 26px;
+    }
+    &:first-child {
+        color: var(--negro);
+    }
+}
+
+.btn-3d {
+    width: 66px;
+    height: 66px;
+    margin-top: -34px;
+    border-radius: 50%;
+    border: 0;
+    background: var(--turquesa);
+    color: #fff;
+    font: 600 22px 'Poppins', sans-serif;
+    box-shadow: 0 6px 16px rgba(124, 196, 200, .6);
+}

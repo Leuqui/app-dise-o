@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+:host {
+    --bg: #f4f7f5;
+    --text: #2b2f3a;
+    --muted: #6f7680;
+    --border: #d3d9d6;
+    --primary: #6b8fa0;
+    --accent-3d: #74b3c4;
+    --green: #3f9a74; // "Ver todo"
+    --more: #cfd5f2;
+    --tab-h: 84px;
+}
+
+.home-content {
+    --background: var(--bg);
+    --color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+}
+
+.home {
+    padding: calc(env(safe-area-inset-top) + 12px) 20px 24px;
+    color: var(--text);
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* Encabezado */
+
+.top {
+    position: relative;
+    .bell {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: none;
+        border: 0;
+        padding: 4px;
+        font-size: 28px;
+        color: var(--text);
+        display: flex;
+    }
+    h1 {
+        margin: 52px 0 0;
+        font-size: 26px;
+        font-weight: 700;
+    }
+    .sub {
+        margin: 6px 0 0;
+        font-size: 15px;
+        color: var(--muted);
+    }
+}
+
+
+/* Buscador */
+
+.search {
+    margin-top: 20px;
+    height: 52px;
+    padding: 0 16px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text);
+    font-size: 22px;
+    &:focus-within {
+        border-color: var(--primary);
+    }
+    input {
+        flex: 1;
+        min-width: 0;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        font: 400 15px 'Poppins', sans-serif;
+        color: var(--text);
+        &::placeholder {
+            color: #8a93b8;
+        }
+    }
+}
+
+
+/* Categorías */
+
+.categories {
+    margin: 24px -20px 0;
+    padding: 0 20px 4px;
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.cat {
+    flex: 0 0 auto;
+    width: 64px;
+    background: none;
+    border: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: var(--text);
+    .circle {
+        width: 60px;
+        height: 60px;
+        border: 1px solid var(--border);
+        border-radius: 50%;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        img {
+            width: 78%;
+            height: 78%;
+            object-fit: contain;
+        }
+        &.more {
+            background: var(--more);
+            border-color: var(--more);
+            font-size: 26px;
+            color: #2b2f3a;
+        }
+    }
+    .label {
+        font-size: 13px;
+    }
+}
+
+
+/* Secciones */
+
+section {
+    margin-top: 24px;
+}
+
+.section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    h2 {
+        margin: 0;
+        font-size: 17px;
+        font-weight: 600;
+    }
+}
+
+.see-all {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--green);
+    cursor: pointer;
+}
+
+
+/* Inspiración */
+
+.inspo-row {
+    margin: 12px -20px 0;
+    padding: 0 20px;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.inspo {
+    position: relative;
+    flex: 0 0 62%;
+    height: 150px;
+    border-radius: 20px;
+    background: #cbd2d8;
+    overflow: hidden;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, .35) 0%, rgba(0, 0, 0, 0) 45%);
+    }
+    .inspo-title {
+        position: absolute;
+        top: 10px;
+        left: 14px;
+        z-index: 1;
+        font-size: 12px;
+        font-weight: 500;
+        color: #fff;
+    }
+}
+
+
+/* Recomendados (deslizable) */
+
+.grid {
+    margin: 12px -20px 0;
+    padding: 0 20px;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.product {
+    position: relative;
+    flex: 0 0 44%;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 20px;
+    img {
+        max-width: 85%;
+        max-height: 80%;
+        object-fit: contain;
+    }
+    .fav {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: none;
+        border: 0;
+        padding: 4px;
+        font-size: 26px;
+        color: var(--text);
+        display: flex;
+        .on {
+            color: #e0556b;
+        }
+    }
+}
