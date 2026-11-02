@@ -1,23 +1,55 @@
 <ion-content [fullscreen]="true">
+
   <section class="hero">
-    <img class="avatar" src="assets/ana.jpg" alt="Ana García" />
-    <div>
+
+    <img
+      class="avatar"
+      src="assets/ana.jpg"
+      alt="Foto de perfil de Ana García"
+    />
+
+    <div class="user-info">
       <h2>Ana García</h2>
       <p>ana.garcia&#64;email.com</p>
     </div>
+
   </section>
 
   <section class="sheet">
-    <nav>
-      @for (m of menu; track m.label) {
-        <button class="item">
-          <ion-icon [name]="m.icon" class="lead"></ion-icon>
-          <span>{{ m.label }}</span>
-          <ion-icon name="chevron-forward" class="chev"></ion-icon>
+
+    <nav class="menu">
+
+      @for (item of menu; track item.label) {
+
+        <button type="button" class="item">
+
+          <ion-icon
+            [name]="item.icon"
+            class="lead">
+          </ion-icon>
+
+          <span>{{ item.label }}</span>
+
+          <ion-icon
+            name="chevron-forward"
+            class="chev">
+          </ion-icon>
+
         </button>
+
       }
+
     </nav>
 
-    <button class="logout">Cerrar sesión</button>
+    <button
+      type="button"
+      class="logout"
+      (click)="logout()">
+
+      Cerrar sesión
+
+    </button>
+
   </section>
+
 </ion-content>

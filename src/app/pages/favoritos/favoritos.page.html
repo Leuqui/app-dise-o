@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/inicio" text=""></ion-back-button>
+      <ion-back-button defaultHref="/tabs/inicio" text=""></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-text-center">Favoritos</ion-title>
   </ion-toolbar>
@@ -19,13 +19,11 @@
         <span>{{ i.price | currency: 'USD' : 'symbol' : '1.0-0' }}</span>
       </div>
 
-      <button
-        class="heart"
-        (click)="toggle(i.id)"
-        [attr.aria-label]="i.fav ? 'Quitar de favoritos' : 'Agregar a favoritos'"
-      >
-        <ion-icon [name]="i.fav ? 'heart' : 'heart-outline'"></ion-icon>
+      <button class="heart" (click)="remove(i.id)" aria-label="Quitar de favoritos">
+        <ion-icon name="heart"></ion-icon>
       </button>
     </div>
+  } @empty {
+    <p class="empty">Todavía no tenés favoritos.</p>
   }
 </ion-content>
