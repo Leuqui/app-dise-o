@@ -1,0 +1,78 @@
+ion-content {
+  --background: var(--app-green);
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #fff;
+  padding: calc(env(safe-area-inset-top) + 28px) 24px 36px;
+
+  h2 {
+    margin: 0 0 4px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.9;
+  }
+}
+
+.avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.85);
+}
+
+.sheet {
+  background: var(--app-bg);
+  border-radius: 28px 28px 0 0;
+  min-height: calc(100% - 140px);
+  padding: 12px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  background: none;
+  border: 0;
+  padding: 18px 4px;
+  font-size: 14px;
+  text-align: left;
+  color: var(--app-text);
+
+  span {
+    flex: 1;
+  }
+}
+
+.lead {
+  font-size: 20px;
+}
+
+.chev {
+  font-size: 16px;
+  color: #444;
+}
+
+.logout {
+  margin-top: 32px;
+  padding-top: 18px;
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--app-line);
+  color: var(--app-danger);
+  font-weight: 600;
+  font-size: 14px;
+}

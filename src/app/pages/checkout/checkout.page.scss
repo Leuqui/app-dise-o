@@ -1,0 +1,82 @@
+h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 18px 0 10px;
+}
+
+.box {
+  border: 1.5px solid #b9c3d3;
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: #fff;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+
+  strong {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+.payment {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+
+  .visa {
+    font-weight: 800;
+    font-style: italic;
+    color: #1a3a9c;
+    font-size: 13px;
+  }
+
+  .dots {
+    flex: 1;
+    letter-spacing: 1px;
+  }
+
+  .change {
+    background: none;
+    border: 0;
+    color: #2f6fc9;
+    font-weight: 700;
+    font-size: 13px;
+  }
+}
+
+.summary-title {
+  margin-top: 28px;
+}
+
+.totals {
+  .line {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 14px;
+  }
+
+  .total {
+    border-top: 1.5px solid #222;
+    margin-top: 10px;
+    padding-top: 12px;
+    font-weight: 600;
+  }
+}
+
+ion-footer ion-toolbar {
+  --background: var(--app-bg);
+  padding: 8px 20px calc(8px + env(safe-area-inset-bottom));
+}
+
+.cta {
+  --background: var(--app-green);
+  height: 46px;
+  margin: 0;
+}

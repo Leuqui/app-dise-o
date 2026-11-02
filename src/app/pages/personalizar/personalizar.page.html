@@ -1,13 +1,42 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>personalizar</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Personalizar</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">personalizar</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <div class="preview">
+    <img src="assets/sofa-nordico.png" alt="Sofá nórdico" />
+  </div>
+
+  <h3>Tapizado</h3>
+  <div class="swatches">
+    @for (c of fabrics; track c) {
+      <button
+        class="swatch"
+        [class.on]="fabric() === c"
+        [style.background]="c"
+        (click)="fabric.set(c)"
+        [attr.aria-label]="'Tapizado ' + c"
+      ></button>
+    }
+  </div>
+
+  <h3>Patas</h3>
+  <div class="swatches">
+    @for (c of legs; track c) {
+      <button
+        class="swatch"
+        [class.on]="leg() === c"
+        [style.background]="c"
+        (click)="leg.set(c)"
+        [attr.aria-label]="'Patas ' + c"
+      ></button>
+    }
+  </div>
+
+  <ion-button expand="block" size="large" class="apply">Aplicar cambios</ion-button>
 </ion-content>
