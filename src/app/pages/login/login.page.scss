@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+:host {
+    --card: #e9eeeb;
+    --text: #2b2f3a;
+    --muted: #6f7680;
+    --border: #d3d9d6;
+    --primary: #6b8fa0;
+    --link: #8aa6b3;
+    --danger: #d64545;
+    --h: clamp(46px, 7vh, 56px); // alto de botones y campos
+}
+
+// Sin bordes oscuros y sin scroll
+.login-content {
+    --background: var(--card);
+    --overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-card {
+    height: 100%;
+    box-sizing: border-box;
+    padding: calc(env(safe-area-inset-top) + 12px) 24px calc(env(safe-area-inset-bottom) + 16px);
+    display: flex;
+    flex-direction: column;
+    color: var(--text);
+}
+
+.back-btn {
+    align-self: flex-start;
+    background: none;
+    border: 0;
+    padding: 4px;
+    font-size: 28px;
+    color: var(--text);
+    display: flex;
+}
+
+.title {
+    margin: clamp(12px, 5vh, 48px) 0 0;
+    font-size: clamp(26px, 4.2vh, 32px);
+    font-weight: 700;
+}
+
+.subtitle {
+    margin: 8px 0 clamp(14px, 4vh, 36px);
+    font-size: 15px;
+    color: var(--muted);
+}
+
+.social-btn {
+    position: relative;
+    width: 100%;
+    height: var(--h);
+    margin-bottom: clamp(10px, 1.8vh, 16px);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    font: 600 15px 'Poppins', sans-serif;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .social-icon {
+        position: absolute;
+        left: 28px;
+        width: 24px;
+        height: 24px;
+    }
+    &:active {
+        background: rgba(0, 0, 0, 0.04);
+    }
+    &:disabled {
+        opacity: 0.6;
+    }
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: clamp(6px, 2vh, 20px) 0 clamp(8px, 2.5vh, 24px);
+    &::before,
+    &::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--text);
+    }
+}
+
+.field {
+    position: relative;
+    height: var(--h);
+    margin-top: clamp(10px, 1.8vh, 16px);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    transition: border-color 0.2s;
+    &:focus-within {
+        border-color: var(--primary);
+    }
+    &.invalid {
+        border-color: var(--danger);
+    }
+    input {
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        padding: 0 16px;
+        background: transparent;
+        border: 0;
+        outline: 0;
+        font: 400 16px 'Poppins', sans-serif;
+        color: var(--text);
+        &::placeholder {
+            color: var(--muted);
+        }
+    }
+}
+
+.eye-btn {
+    background: none;
+    border: 0;
+    padding: 0 16px;
+    font-size: 24px;
+    color: #8a93b8;
+    display: flex;
+}
+
+.error {
+    margin: 4px 4px 0;
+    font-size: 12px;
+    color: var(--danger);
+    &.center {
+        text-align: center;
+    }
+}
+
+.forgot {
+    display: block;
+    margin: clamp(8px, 1.5vh, 14px) 4px clamp(12px, 3vh, 28px);
+    text-align: right;
+    font-size: 14px;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.primary-btn {
+    width: 100%;
+    height: var(--h);
+    background: var(--primary);
+    border: 0;
+    border-radius: 16px;
+    font: 600 16px 'Poppins', sans-serif;
+    color: #fff;
+    background: #2E7D67;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:disabled {
+        opacity: 0.7;
+    }
+    ion-spinner {
+        width: 24px;
+        height: 24px;
+        color: #fff;
+    }
+}
+
+// Se pega al fondo ocupando el espacio que sobra
+.register {
+    margin: auto 0 0;
+    padding-top: 12px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted);
+    a {
+        color: var(--link);
+        font-weight: 500;
+        cursor: pointer;
+        margin-left: 4px;
+    }
+}

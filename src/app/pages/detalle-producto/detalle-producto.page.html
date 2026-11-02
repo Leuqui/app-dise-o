@@ -1,13 +1,49 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>detalle-producto</ion-title>
-  </ion-toolbar>
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/catalogo" text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button (click)="fav = !fav">
+                <ion-icon slot="icon-only" [name]="fav ? 'heart' : 'heart-outline'"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">detalle-producto</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+    <div class="imagen">
+        <img [src]="producto.img" [alt]="producto.nombre" />
+    </div>
+
+    <div class="contenido">
+        <h1>{{ producto.nombre }}</h1>
+        <p class="precio">{{ producto.precio | currency:'USD':'symbol':'1.0-0' }}</p>
+
+        <div class="rating">
+            <span class="nota">{{ producto.rating }}</span>
+            <ion-icon *ngFor="let e of [1,2,3,4,5]" name="star"></ion-icon>
+            <span class="resenas">({{ producto.resenas }})</span>
+        </div>
+
+        <h2>Colores disponibles</h2>
+        <div class="colores">
+            <button *ngFor="let c of producto.colores" class="color" [class.sel]="c === colorSel" [style.background]="c" (click)="colorSel = c"></button>
+        </div>
+
+        <h2>Descripción</h2>
+        <p class="texto">{{ producto.descripcion }}</p>
+
+        <h2>Medidas</h2>
+        <div class="medidas">
+            <span>Ancho: {{ producto.ancho }} cm</span>
+            <span>Profundidad: {{ producto.profundidad }} cm</span>
+            <span>Alto: {{ producto.alto }} cm</span>
+        </div>
+
+        <button class="btn-principal" (click)="agregar3D()">Agregar al espacio 3D</button>
+        <button class="btn-secundario" (click)="fav = !fav">
+      {{ fav ? 'Quitar de favoritos' : 'Agregar a favoritos' }}
+    </button>
+    </div>
 </ion-content>

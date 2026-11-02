@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+:host {
+    --verde: #2e9e6b;
+    /* color del chip "Todos" */
+    --negro: #0b0b0b;
+    --borde: #dcdcdc;
+    font-family: 'Poppins', sans-serif;
+}
+
+ion-toolbar {
+    --background: #fff;
+    --color: var(--negro);
+    ion-icon {
+        font-size: 26px;
+        color: var(--negro);
+    }
+}
+
+.titulo {
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+ion-content {
+    --background: #fff;
+}
+
+.buscador {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 16px 20px 18px;
+    padding: 0 18px;
+    height: 52px;
+    border: 1.5px solid var(--borde);
+    border-radius: 16px;
+    ion-icon {
+        font-size: 22px;
+    }
+    input {
+        flex: 1;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        font: 500 16px 'Poppins', sans-serif;
+        color: var(--negro);
+        &::placeholder {
+            color: #8a8fb0;
+        }
+    }
+}
+
+.categorias {
+    display: flex;
+    gap: 10px;
+    padding: 0 20px 20px;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.chip {
+    flex: none;
+    padding: 9px 20px;
+    border-radius: 999px;
+    border: 1.5px solid var(--borde);
+    background: #fff;
+    font: 500 14px 'Poppins', sans-serif;
+    color: var(--negro);
+    &.activo {
+        background: var(--verde);
+        border-color: var(--verde);
+        color: #fff;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 16px;
+    padding: 0 20px 24px;
+}
+
+.img-box {
+    aspect-ratio: 1 / 1;
+    border: 1.5px solid #e6e6e6;
+    border-radius: 22px;
+    padding: 14px;
+    overflow: hidden;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 8px 0;
+    color: var(--negro);
+    .nombre {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--negro);
+    }
+    .precio {
+        margin: 4px 0 0;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--negro);
+    }
+    ion-icon {
+        font-size: 24px;
+        cursor: pointer;
+        color: var(--negro);
+    }
+}

@@ -1,13 +1,69 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>inicio</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="home-content">
+    <div class="home">
+        <!-- Encabezado -->
+        <header class="top">
+            <button type="button" class="bell" aria-label="Notificaciones">
+        <ion-icon name="notifications-outline"></ion-icon>
+      </button>
+            <h1>¡Hola, Ana! <span class="wave">🖐🏽</span></h1>
+            <p class="sub">¿Qué vas a diseñar hoy?</p>
+        </header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">inicio</ion-title>
-    </ion-toolbar>
-  </ion-header>
+        <!-- Buscador -->
+        <label class="search">
+      <ion-icon name="search-outline"></ion-icon>
+      <input
+        type="search"
+        placeholder="Buscar muebles, estilos..."
+        [(ngModel)]="query"
+        (keyup.enter)="search()"
+      />
+    </label>
+
+        <!-- Categorías -->
+        <nav class="categories">
+            @for (c of categories; track c.name) {
+            <button type="button" class="cat" (click)="openCategory(c.name)">
+          <span class="circle"><img [src]="c.img" [alt]="c.name" (error)="hideImg($event)" /></span>
+          <span class="label">{{ c.name }}</span>
+        </button> }
+            <button type="button" class="cat" (click)="openCategory('Todos')">
+        <span class="circle more"><ion-icon name="ellipsis-horizontal"></ion-icon></span>
+        <span class="label">Más</span>
+      </button>
+        </nav>
+
+        <!-- Inspiración -->
+        <section>
+            <div class="section-head">
+                <h2>Inspiración para ti</h2>
+                <a class="see-all" (click)="goTo('/tabs/catalogo')">Ver todo</a>
+            </div>
+            <div class="inspo-row">
+                @for (i of inspiration; track i.title) {
+                <article class="inspo" (click)="goTo('/tabs/catalogo')">
+                    <img [src]="i.img" [alt]="i.title" (error)="hideImg($event)" />
+                    <span class="inspo-title">{{ i.title }}</span>
+                </article>
+                }
+            </div>
+        </section>
+
+        <!-- Recomendados -->
+        <section>
+            <div class="section-head">
+                <h2>Recomendados</h2>
+            </div>
+            <div class="grid">
+                @for (p of products; track p.id) {
+                <article class="product" (click)="goTo('/tabs/catalogo')">
+                    <button type="button" class="fav" [attr.aria-label]="p.fav ? 'Quitar de favoritos' : 'Agregar a favoritos'" (click)="toggleFav(p, $event)">
+              <ion-icon [name]="p.fav ? 'heart' : 'heart-outline'" [class.on]="p.fav"></ion-icon>
+            </button>
+                    <img [src]="p.img" [alt]="p.name" (error)="hideImg($event)" />
+                </article>
+                }
+            </div>
+        </section>
+    </div>
 </ion-content>
