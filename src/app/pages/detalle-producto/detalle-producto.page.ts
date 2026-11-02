@@ -11,7 +11,7 @@ import { chevronBackOutline, heart, heartOutline, star } from 'ionicons/icons';
   standalone: true,
   imports: [CommonModule, IonicModule],
 })
-export class DetallePage {
+export class DetalleProductoPage {
   fav = false;
 
   producto = {
@@ -19,7 +19,7 @@ export class DetallePage {
     precio: 160000,
     rating: 4.8,
     resenas: 124,
-    img: 'assets/img/sillon-nordico.png',
+    img: 'assets/prod-sillon.png',
     colores: ['#8fb0c4', '#a89284', '#b8b0ac', '#1c1c1e'],
     descripcion: 'Sillón moderno de estilo nórdico, cómodo y elegante, ideal para salas contemporáneas.',
     ancho: 210,

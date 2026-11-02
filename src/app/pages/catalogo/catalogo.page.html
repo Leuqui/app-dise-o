@@ -29,7 +29,7 @@
     <!-- Productos -->
     <div class="grid">
         <div class="producto" *ngFor="let p of filtrados()">
-            <div class="img-box">
+            <div class="img-box" (click)="irDetalle()">
                 <img [src]="p.img" [alt]="p.nombre" />
             </div>
             <div class="info">

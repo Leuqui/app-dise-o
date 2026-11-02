@@ -23,22 +23,22 @@ export class InicioPage {
 
   // Cambia estas rutas por tus imágenes en src/assets/img/
   categories = [
-    { name: 'Sofás',  img: 'assets/img/cat-sofa.png' },
-    { name: 'Sillas', img: 'assets/img/cat-silla.png' },
-    { name: 'Mesas',  img: 'assets/img/cat-mesa.png' },
-    { name: 'Camas',  img: 'assets/img/cat-cama.png' },
+    { name: 'Sofás',  img: 'assets/sofa.png' },
+    { name: 'Sillas', img: 'assets/silla.png' },
+    { name: 'Mesas',  img: 'assets/mesa.png' },
+    { name: 'Camas',  img: 'assets/cama.png' },
   ];
 
   inspiration = [
-    { title: 'Sala Moderna',      img: 'assets/img/inspo-sala.jpg' },
-    { title: 'Dormitorio Nórdico', img: 'assets/img/inspo-dormitorio.jpg' },
-    { title: 'Dormitorio Nórdico', img: 'assets/img/inspo-dormitorio.jpg' },
+    { title: 'Sala Moderna',      img: 'assets/sala moderna.png' },
+    { title: 'Dormitorio Nórdico', img: 'assets/dormitorio nordico.png' },
+    { title: 'Dormitorio Nórdico', img: 'assets/dormitorio nordico.png' },
   ];
 
   products: Product[] = [
-    { id: 1, name: 'Sillón Nórdico', img: 'assets/img/prod-sillon.png', fav: false },
-    { id: 2, name: 'Mesa Toscana',   img: 'assets/img/prod-mesa.png',   fav: false },
-    { id: 3, name: 'Cama Nórdica',   img: 'assets/img/prod-cama.png',   fav: false },
+    { id: 1, name: 'Sillón Nórdico', img: 'assets/sillon.png', fav: false },
+    { id: 2, name: 'Mesa Toscana',   img: 'assets/mesa2.png',   fav: false },
+    { id: 3, name: 'Cama Nórdica',   img: 'assets/mesa2.png',   fav: false },
   ];
 
   constructor() {

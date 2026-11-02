@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 :host {
     --verde: #2e9e6b;
-    /* ← color del chip "Todos" (verde) */
+    /* color del chip "Todos" */
     --negro: #0b0b0b;
     --borde: #dcdcdc;
-    --turquesa: #7cc4c8;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -81,20 +80,18 @@ ion-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 22px 16px;
-    padding: 0 20px 110px;
+    padding: 0 20px 24px;
 }
 
 .img-box {
     aspect-ratio: 1 / 1;
     border: 1.5px solid #e6e6e6;
     border-radius: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 14px;
+    overflow: hidden;
     img {
-        max-width: 100%;
-        max-height: 100%;
+        width: 100%;
+        height: 100%;
         object-fit: contain;
     }
 }
@@ -104,63 +101,22 @@ ion-content {
     justify-content: space-between;
     align-items: flex-start;
     padding: 10px 8px 0;
+    color: var(--negro);
     .nombre {
         margin: 0;
         font-size: 12px;
         font-weight: 500;
+        color: var(--negro);
     }
     .precio {
         margin: 4px 0 0;
         font-size: 13px;
         font-weight: 700;
+        color: var(--negro);
     }
     ion-icon {
         font-size: 24px;
         cursor: pointer;
-    }
-}
-
-ion-footer {
-    background: #fff;
-}
-
-.tabbar {
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 78px;
-    padding: 0 8px env(safe-area-inset-bottom);
-    background: #fff;
-    border-radius: 28px 28px 0 0;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, .06);
-}
-
-.tab {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-    background: none;
-    border: 0;
-    color: #9a9a9a;
-    font: 400 10px 'Poppins', sans-serif;
-    ion-icon {
-        font-size: 26px;
-    }
-    &:first-child {
         color: var(--negro);
     }
-}
-
-.btn-3d {
-    width: 66px;
-    height: 66px;
-    margin-top: -34px;
-    border-radius: 50%;
-    border: 0;
-    background: var(--turquesa);
-    color: #fff;
-    font: 600 22px 'Poppins', sans-serif;
-    box-shadow: 0 6px 16px rgba(124, 196, 200, .6);
 }
