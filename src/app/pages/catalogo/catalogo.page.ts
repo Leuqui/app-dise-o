@@ -87,7 +87,7 @@ export class CatalogoPage {
 
   constructor(
     private router: Router,
-    private carrito: CarritoService
+    public carrito:CarritoService
   ) {
     addIcons({
       chevronBackOutline,

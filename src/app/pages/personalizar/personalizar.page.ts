@@ -1,11 +1,16 @@
 import { Component, signal } from '@angular/core';
-import { IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonContent, IonButton } from '@ionic/angular/standalone';
+import { RouterLink } from '@angular/router';
+import {
+  IonHeader, IonToolbar, IonButtons, IonButton, IonIcon, IonTitle, IonContent,
+} from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { chevronBackOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-personalizar',
   templateUrl: './personalizar.page.html',
   styleUrl: './personalizar.page.scss',
-  imports: [IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonContent, IonButton],
+  imports: [RouterLink, IonHeader, IonToolbar, IonButtons, IonButton, IonIcon, IonTitle, IonContent],
 })
 export class PersonalizarPage {
   fabrics = ['#2e7a56', '#a9c5a0', '#e6dccb', '#9a9a9a', '#2b4c7e'];
@@ -13,4 +18,8 @@ export class PersonalizarPage {
 
   fabric = signal(this.fabrics[0]);
   leg = signal(this.legs[1]);
+
+  constructor() {
+    addIcons({ chevronBackOutline });
+  }
 }
