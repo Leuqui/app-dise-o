@@ -1,13 +1,31 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>favoritos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Favoritos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">favoritos</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding-horizontal">
+  @for (i of items(); track i.id) {
+    <div class="row">
+      <div class="thumb">
+        <img [src]="i.img" [alt]="i.name" />
+      </div>
+
+      <div class="meta">
+        <strong>{{ i.name }}</strong>
+        <span>{{ i.price | currency: 'USD' : 'symbol' : '1.0-0' }}</span>
+      </div>
+
+      <button
+        class="heart"
+        (click)="toggle(i.id)"
+        [attr.aria-label]="i.fav ? 'Quitar de favoritos' : 'Agregar a favoritos'"
+      >
+        <ion-icon [name]="i.fav ? 'heart' : 'heart-outline'"></ion-icon>
+      </button>
+    </div>
+  }
 </ion-content>

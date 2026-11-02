@@ -1,20 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { Component, signal } from '@angular/core';
+import { IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonContent, IonButton } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-personalizar',
   templateUrl: './personalizar.page.html',
-  styleUrls: ['./personalizar.page.scss'],
-  standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  styleUrl: './personalizar.page.scss',
+  imports: [IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonContent, IonButton],
 })
-export class PersonalizarPage implements OnInit {
+export class PersonalizarPage {
+  fabrics = ['#2e7a56', '#a9c5a0', '#e6dccb', '#9a9a9a', '#2b4c7e'];
+  legs = ['#2b2b2b', '#c58a4b', '#b87a3e', '#e8dfcf'];
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  fabric = signal(this.fabrics[0]);
+  leg = signal(this.legs[1]);
 }

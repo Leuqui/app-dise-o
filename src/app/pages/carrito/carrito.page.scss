@@ -1,0 +1,115 @@
+.item {
+  display: grid;
+  grid-template-columns: 104px 1fr auto;
+  gap: 12px;
+  align-items: start;
+  padding: 10px 0 18px;
+}
+
+.thumb {
+  width: 104px;
+  height: 84px;
+  display: grid;
+  place-items: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+  padding-top: 4px;
+
+  .detail {
+    color: #333;
+    font-size: 12px;
+  }
+
+  .price {
+    margin-top: 8px;
+    font-weight: 600;
+    text-align: center;
+    width: fit-content;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #222;
+  border-radius: 6px;
+  height: 26px;
+  font-size: 13px;
+  font-weight: 600;
+
+  span {
+    min-width: 18px;
+    text-align: center;
+  }
+
+  button {
+    background: none;
+    border: 0;
+    padding: 0 6px;
+    height: 100%;
+    font-size: 14px;
+    color: var(--app-text);
+  }
+}
+
+.trash {
+  background: none;
+  border: 0;
+  padding: 2px;
+  font-size: 22px;
+  color: var(--app-text);
+}
+
+.empty {
+  text-align: center;
+  color: var(--app-muted);
+  padding: 40px 0;
+}
+
+.totals {
+  margin-top: 28px;
+  border-top: 1.5px solid #222;
+  padding-top: 8px;
+
+  .line {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 14px;
+  }
+
+  .total {
+    border-top: 1.5px solid #222;
+    margin-top: 8px;
+    padding-top: 12px;
+    font-weight: 600;
+  }
+}
+
+ion-footer ion-toolbar {
+  --background: var(--app-bg);
+  padding: 8px 20px calc(8px + env(safe-area-inset-bottom));
+}
+
+.cta {
+  --background: var(--app-green);
+  height: 46px;
+  margin: 0;
+}

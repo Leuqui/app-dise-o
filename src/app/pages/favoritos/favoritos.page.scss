@@ -1,0 +1,43 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--app-line);
+}
+
+.thumb {
+  width: 96px;
+  height: 80px;
+  border-radius: 12px;
+  background: #f1efeb;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13px;
+
+  span {
+    font-weight: 600;
+  }
+}
+
+.heart {
+  background: none;
+  border: 0;
+  font-size: 22px;
+  color: #222;
+  padding: 8px;
+}
